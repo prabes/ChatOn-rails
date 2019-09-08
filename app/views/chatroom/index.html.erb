@@ -37,14 +37,14 @@
         </div>
       </div>
       <div class="extra content">
-        <form class="ui reply form">
-          <div class="field">
+          <%= form_for(@message, html: { class: "ui form", role: "form" },url: message_path, method: :post) do |f| %>
+           <div class="field">
             <div class="ui fluid icon input">
-              <input type="text" placeholder="Type a Message...">
-              <i class="bodered inverted orange edit icon"></i>
+              <%= f.text_field :body %>
+              <%= f.button '<i class = "bodered inverted orange edit icon"></i>'.html_safe  %>
+             <% end %>
             </div>
           </div>  
-        </form>
       </div>
 
       
